@@ -1,3 +1,4 @@
+/* Global styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,55 +6,60 @@ body {
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
   background-color: #333;
   color: #fff;
+  padding: 1rem;
+  text-align: center;
 }
 
-h1 {
+header h1 {
+  font-size: 2rem;
   margin: 0;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  text-align: center;
+header h2 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+main {
+  padding: 1rem;
 }
 
 section {
   margin-bottom: 2rem;
 }
 
-h2 {
-  margin-top: 2rem;
+/* Section styles */
+#about {
+  background-color: #f2f2f2;
+  padding: 1rem;
 }
 
-/* Slideshow styles */
-.slideshow-container {
-  max-width: 600px;
-  margin: 0 auto;
-  position: relative;
+#experience, #education {
+  background-color: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.mySlides {
-  display: none;
-  animation: fade-in 1s;
+/* List styles */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+li {
+  margin-bottom: 1rem;
 }
 
-.mySlides img {
-  width: 100%;
-  height: auto;
+li h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+li p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #333;
 }
