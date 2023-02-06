@@ -1,66 +1,50 @@
 body {
+  background-color: lightblue;
   font-family: Arial, sans-serif;
+  color: white;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: darkblue;
   padding: 20px;
 }
 
-h1 {
+header h1 {
   font-size: 36px;
   margin: 0;
 }
 
-nav {
-  display: flex;
-}
-
 nav ul {
+  display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav li {
-  margin: 0 10px;
-}
-
 nav a {
-  font-size: 18px;
+  display: block;
+  padding: 10px 20px;
+  color: white;
   text-decoration: none;
-  color: black;
 }
 
 main {
   padding: 20px;
 }
 
-section {
-  margin-bottom: 40px;
-}
-
 section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
+  font-size: 24px;
+  margin: 0 0 20px;
 }
 
-section p {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-#projects ul {
+#project-list {
   display: flex;
-  flex-wrap: wrap;
-}
-
-#projects li {
-  width: 33.33%;
-  margin-bottom: 20px;
-  text-align: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 #project-details {
@@ -70,12 +54,16 @@ section p {
 #project-details div {
   background-color: lightgray;
   padding: 20px;
-  margin-bottom: 40px;
+  margin: 20px 0;
 }
 
 form {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgray;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 form input[type="text"],
@@ -83,21 +71,23 @@ form input[type="email"],
 form textarea {
   width: 100%;
   padding: 10px;
+  margin: 10px 0;
   font-size: 16px;
-  margin-bottom: 20px;
-  box-sizing: border-box;
 }
 
 form input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  background-color: lightblue;
+  background-color: darkblue;
   color: white;
+  padding: 10px 20px;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
 }
 
 footer {
+  background-color: darkblue;
+  color: white;
   text-align: center;
   padding: 20px;
 }
