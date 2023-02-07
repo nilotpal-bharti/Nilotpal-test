@@ -1,71 +1,20 @@
-body {
+.container {
   height: 100vh;
-  background: linear-gradient(to right, 
-    rgba(255,0,0,0) 0%, 
-    rgba(255,0,0,1) 100%
-  );
-  background-size: 400% 400%;
-  animation: Gradient 30s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./background.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  12.5% {
-    background-position: 100% 50%;
-    background: linear-gradient(to right, 
-      rgba(255,0,0,0) 0%, 
-      rgba(255,128,0,1) 100%
-    );
-  }
-  25% {
-    background-position: 0% 50%;
-    background: linear-gradient(to right, 
-      rgba(255,128,0,0) 0%, 
-      rgba(255,255,0,1) 100%
-    );
-  }
-  37.5% {
-    background-position: 100% 50%;
-    background: linear-gradient(to right, 
-      rgba(255,255,0,0) 0%, 
-      rgba(128,255,0,1) 100%
-    );
-  }
-  50% {
-    background-position: 0% 50%;
-    background: linear-gradient(to right, 
-      rgba(128,255,0,0) 0%, 
-      rgba(0,255,0,1) 100%
-    );
-  }
-  62.5% {
-    background-position: 100% 50%;
-    background: linear-gradient(to right, 
-      rgba(0,255,0,0) 0%, 
-      rgba(0,255,128,1) 100%
-    );
-  }
-  75% {
-    background-position: 0% 50%;
-    background: linear-gradient(to right, 
-      rgba(0,255,128,0) 0%, 
-      rgba(0,255,255,1) 100%
-    );
-  }
-  87.5% {
-    background-position: 100% 50%;
-    background: linear-gradient(to right, 
-      rgba(0,255,255,0) 0%, 
-      rgba(0,128,255,1) 100%
-    );
-  }
-  100% {
-    background-position: 0% 50%;
-    background: linear-gradient(to right, 
-      rgba(0,128,255,0) 0%, 
-      rgba(255,0,0,1) 100%
-    );
-  }
+h1 {
+  color: #3f3d56;
+  text-align: center;
+}
+
+p {
+  color: #ccc;
+  text-align: center;
 }
