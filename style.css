@@ -1,17 +1,71 @@
-@keyframes colorChange {
+body {
+  height: 100vh;
+  background: linear-gradient(to right, 
+    rgba(255,0,0,0) 0%, 
+    rgba(255,0,0,1) 100%
+  );
+  background-size: 400% 400%;
+  animation: Gradient 30s ease infinite;
+}
+
+@keyframes Gradient {
   0% {
-    background-color: blue;
+    background-position: 0% 50%;
+  }
+  12.5% {
+    background-position: 100% 50%;
+    background: linear-gradient(to right, 
+      rgba(255,0,0,0) 0%, 
+      rgba(255,128,0,1) 100%
+    );
   }
   25% {
-    background-color: red;
+    background-position: 0% 50%;
+    background: linear-gradient(to right, 
+      rgba(255,128,0,0) 0%, 
+      rgba(255,255,0,1) 100%
+    );
+  }
+  37.5% {
+    background-position: 100% 50%;
+    background: linear-gradient(to right, 
+      rgba(255,255,0,0) 0%, 
+      rgba(128,255,0,1) 100%
+    );
   }
   50% {
-    background-color: yellow;
+    background-position: 0% 50%;
+    background: linear-gradient(to right, 
+      rgba(128,255,0,0) 0%, 
+      rgba(0,255,0,1) 100%
+    );
+  }
+  62.5% {
+    background-position: 100% 50%;
+    background: linear-gradient(to right, 
+      rgba(0,255,0,0) 0%, 
+      rgba(0,255,128,1) 100%
+    );
   }
   75% {
-    background-color: green;
+    background-position: 0% 50%;
+    background: linear-gradient(to right, 
+      rgba(0,255,128,0) 0%, 
+      rgba(0,255,255,1) 100%
+    );
+  }
+  87.5% {
+    background-position: 100% 50%;
+    background: linear-gradient(to right, 
+      rgba(0,255,255,0) 0%, 
+      rgba(0,128,255,1) 100%
+    );
   }
   100% {
-    background-color: blue;
+    background-position: 0% 50%;
+    background: linear-gradient(to right, 
+      rgba(0,128,255,0) 0%, 
+      rgba(255,0,0,1) 100%
+    );
   }
 }
