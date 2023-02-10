@@ -3,3 +3,40 @@ footer div i {
     color: black;
     padding: 10px;
   }
+ 
+      
+  body {
+    
+    background: linear-gradient(to right, 
+      rgba(255, 0, 0, 0) 0%, 
+      rgb(242, 0, 0, 1) 100%
+    );
+    background-size: 400% 400%;
+    animation: Gradient 15s ease infinite;
+  }
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  img {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    margin: 0;
+  }
+  
