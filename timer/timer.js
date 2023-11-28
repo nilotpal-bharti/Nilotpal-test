@@ -1,7 +1,7 @@
 // Function to open a new page
 document.getElementById('openPageButton').addEventListener('click', function() {
     // Replace 'your_link_here' with the actual link you want to open
-    window.open('https://www.nilotpalbharti.com/', '_blank');
+    window.open('https://www.nilotpalbharti.com/');
 });
 
 // Function to display the popup with the timer and time formats
