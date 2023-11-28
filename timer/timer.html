@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Vibrant Website</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="buttons">
+        <button id="openPageButton">Open New Page</button>
+        <button id="scrollToBottomButton">Scroll to Bottom</button>
+    </div>
+</div>
+
+<div class="popup" id="popup">
+    <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <div class="timer-container">
+            <div id="timer"></div>
+            <div id="unixTime"></div>
+            <div id="isoTime"></div>
+        </div>
+        <div class="copy-buttons">
+            <button onclick="copyToClipboard('timer')">Copy IST Time</button>
+            <button onclick="copyToClipboard('unixTime')">Copy UNIX Time</button>
+            <button onclick="copyToClipboard('isoTime')">Copy ISO Time</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
