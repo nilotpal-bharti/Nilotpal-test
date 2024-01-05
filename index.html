@@ -1,58 +1,81 @@
-<html>
-  <head>
-   
-    <title>Nilotpal Bharti</title>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11377004555">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ad-Analytics Test Site</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
 
-  gtag('config', 'AW-11377004555');
-</script>
-    <!-- Event snippet for Page view conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-11377004555/E5AWCLnziu8YEIug_bAq'});
-</script>
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
 
-  
-    <script src="https://assets.adobedtm.com/e9875dd51dbe/0feaf2f93f02/launch-74e909985351-development.min.js" async></script>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-  </head>
-  <body >
-  
+        #content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
 
+        #center-box {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: url('GIF 1.gif') center center no-repeat;
+            background-size: cover;
+        }
 
-    <div id="dot"></div>
-    <script src="script.js"></script>
-    <main>
-      <div class="container">
-        <button id="openTimerButton">Open Timer Page</button>
-             <!-- Inside the head section or at the end of the body section of your main site -->
-<script>
-    document.getElementById('openTimerButton').addEventListener('click', function() {
-        window.open('/timer/timer.html', '_blank');
-    });
-</script>
-      </div>
-    </main>
+        .circle {
+            position: absolute;
+            background-color: #fff; /* Adjust the color as needed */
+            width: 100px; /* Adjust the size as needed */
+            height: 100px; /* Adjust the size as needed */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px; /* Adjust the font size as needed */
+            color: #000; /* Adjust the text color as needed */
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+			cursor: pointer;
+		}
 
-   <footer >
-    <p style="text-align:center">Copyright © 2023 Nilotpal Bharti</p>
-    <div style="text-align:center">
-      <a href="https://www.facebook.com/nilotpalbharti" target="_blank" >
-        <i class="fab fa-facebook-square fa-2x"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/nilotpalbharti" target="_blank">
-        <i class="fab fa-linkedin fa-2x"></i>
-      </a>
-      <!-- Inside the body of your main site -->
+        #circle1 { top: 50px; left: 50px; }
+        #circle2 { top: 50px; right: 50px; }
+        #circle3 { bottom: 50px; left: 50px; }
+        #circle4 { bottom: 50px; right: 50px; }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted>
+        <source src="pexels_videos_3954 (1080p).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
+    <div id="content-container">
+        <div id="center-box">
+            
+        </div>
+         <div class="circle" id="circle1" data-analytics-id="PageView">Page View</div>
+		 <div class="circle" id="circle2" data-analytics-id="LinkCall">Link Call</div>
+		 <div class="circle" id="circle3" data-analytics-id="Purchase">Purchase</div>
+		 <div class="circle" id="circle4" data-analytics-id="JustClick">Just click and watch</div>
 
     </div>
-</footer>
 </body>
 </html>
