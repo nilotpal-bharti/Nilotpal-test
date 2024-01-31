@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<script src="https://assets.adobedtm.com/e9875dd51dbe/0feaf2f93f02/launch-74e909985351-development.min.js" async></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome Page</title>
+	<title>Ad-Analytics Test Site</title>
     <style>
         body, html {
             margin: 0;
@@ -12,62 +13,66 @@
             overflow: hidden;
         }
 
-        .dynamic-background {
+         #background-gif {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
+            object-fit: cover;
             z-index: -1;
-            animation: backgroundAnimation 10s infinite;
         }
 
-        @keyframes backgroundAnimation {
-            0%   {background-color: red;}
-            25%  {background-color: yellow;}
-            50%  {background-color: blue;}
-            75%  {background-color: green;}
-            100% {background-color: red;}
+        #content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
         }
 
-        .welcome-message {
+        #center-box {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: url('GIF 1.gif') center center no-repeat;
+            background-size: cover;
+        }
+
+        .circle {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 2em;
-            color: white;
+            background-color: #fff; /* Adjust the color as needed */
+            width: 100px; /* Adjust the size as needed */
+            height: 100px; /* Adjust the size as needed */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px; /* Adjust the font size as needed */
+            color: #000; /* Adjust the text color as needed */
+            font-weight: bold;
             text-align: center;
-        }
+            line-height: 1;
+			cursor: pointer;
+		}
 
-        .tutorial-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            padding: 10px 20px;
-            font-size: 1em;
-            color: white;
-            background-color: #007bff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .tutorial-button:hover {
-            background-color: #0056b3;
-        }
+        #circle1 { top: 50px; left: 50px; }
+        #circle2 { top: 50px; right: 50px; }
+        #circle3 { bottom: 50px; left: 50px; }
+        #circle4 { bottom: 50px; right: 50px; }
     </style>
 </head>
 <body>
+    <img id="background-gif" src="ezgif.com-optimize.gif" alt="Background GIF">
 
-    <div class="dynamic-background"></div>
+    <div id="content-container">
+        <div id="center-box">
+            
+        </div>
+         <div class="circle" id="circle1" data-analytics-id="PageView">Page View</div>
+		 <div class="circle" id="circle2" data-analytics-id="LinkCall">Link Call</div>
+		 <div class="circle" id="circle3" data-analytics-id="Purchase">Purchase</div>
+		 <div class="circle" id="circle4" data-analytics-id="Product View">Product View</div>
 
-    <div class="welcome-message">
-        Hello, you are welcome!
     </div>
-
-    <a href="https://www.nilotpalbharti.com/tutorials" class="tutorial-button">Go to Tutorials</a>
-
 </body>
 </html>
