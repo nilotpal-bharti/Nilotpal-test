@@ -1,120 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-	;(function(win, doc, style, timeout) {
-  var STYLE_ID = 'at-body-style';
-
-  function getParent() {
-    return doc.getElementsByTagName('head')[0];
-  }
-
-  function addStyle(parent, id, def) {
-    if (!parent) {
-      return;
-    }
-
-    var style = doc.createElement('style');
-    style.id = id;
-    style.innerHTML = def;
-    parent.appendChild(style);
-  }
-
-  function removeStyle(parent, id) {
-    if (!parent) {
-      return;
-    }
-
-    var style = doc.getElementById(id);
-
-    if (!style) {
-      return;
-    }
-
-    parent.removeChild(style);
-  }
-
-  addStyle(getParent(), STYLE_ID, style);
-  setTimeout(function() {
-    removeStyle(getParent(), STYLE_ID);
-  }, timeout);
-}(window, document, "body {opacity: 0 !important}", 3000));
-
-</script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Testing web-page</title>
+    <title>Coming Soon</title>
     <style>
-        body, html {
+        /* General body styling */
+        body {
             margin: 0;
             padding: 0;
-            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000;
+            color: white;
+            font-family: 'Arial', sans-serif;
             overflow: hidden;
         }
 
-         #background-gif {
+        /* Fullscreen background styling */
+        .background-image {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            background-color: black;
             z-index: -1;
         }
 
-        #content-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-
-        #center-box {
-            position: relative;
-            width: 500px;
-            height: 500px;
-            background: url('GIF 2.gif') center center no-repeat;
-            background-size: cover;
-        }
-
-        .circle {
-            position: absolute;
-            background-color: #fff; /* Adjust the color as needed */
-            width: 100px; /* Adjust the size as needed */
-            height: 100px; /* Adjust the size as needed */
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 10px; /* Adjust the font size as needed */
-            color: #000; /* Adjust the text color as needed */
-            font-weight: bold;
+        /* Glare effect around the text */
+        .coming-soon {
+            font-size: 48px;
             text-align: center;
-            line-height: 1;
-			cursor: pointer;
-		}
+            letter-spacing: 8px;
+            color: white;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
 
-        #circle1 { top: 50px; left: 50px; }
-        #circle2 { top: 50px; right: 50px; }
-        #circle3 { bottom: 50px; left: 50px; }
-        #circle4 { bottom: 50px; right: 50px; }
+        /* Adding shine effect */
+        .coming-soon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
+            animation: shine 3s infinite;
+            z-index: 2;
+        }
+
+        /* Keyframes for shine effect */
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Digital clock styling */
+        #clock {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+            font-family: 'Courier New', monospace;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <img id="background-gif" src="ezgif.com-optimize.gif" alt="Background GIF">
-<span id="performanceLink" style="cursor: pointer;">Performance_Link_Click_Khám phá nước Úc (Tiếng Anh)</span>
 
+    <div class="background-image"></div>
 
-    <div id="content-container">
-        <div id="center-box">
-            
-        </div>
-         <div class="circle" id="circle1" data-analytics-id="PageView">Page View</div>
-		 <div class="circle" id="circle2" data-analytics-id="LinkCall">Link Call</div>
-		 <div class="circle" id="circle3" data-analytics-id="Purchase">Purchase</div>
-		 <div class="circle" id="circle4" data-analytics-id="Product View">Product View</div>
+    <!-- Coming Soon message with glare effect -->
+    <div class="coming-soon">COMING SOON</div>
 
-    </div>
+    <!-- Digital clock -->
+    <div id="clock"></div>
+
+    <script>
+        // Function to get the current time and update the clock
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const day = now.toLocaleString('en-us', { weekday: 'long' });
+            const date = now.getDate();
+            const month = now.toLocaleString('en-us', { month: 'long' });
+            const year = now.getFullYear();
+
+            // Update the clock's HTML content
+            document.getElementById('clock').innerHTML = `
+                ${hours}:${minutes}:${seconds} <br>
+                ${day}, ${month} ${date}, ${year}
+            `;
+        }
+
+        // Initial call to update the clock
+        updateClock();
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+    </script>
+
 </body>
 </html>
