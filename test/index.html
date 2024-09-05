@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Option</title>
+    <script>
+        function askForOption() {
+            // Show the prompt for options
+            let userChoice = prompt("Choose an option:\n1. Analytics AppMeasurement\n2. AEP WebSDK", "Enter 1 or 2");
+
+            // Check the user input and redirect accordingly
+            if (userChoice == "1") {
+                window.location.href = "./aa";
+            } else if (userChoice == "2") {
+                window.location.href = "./aep";
+            } else {
+                alert("Invalid option. Please refresh the page and select either 1 or 2.");
+            }
+        }
+
+        // Trigger the pop-up as soon as the page loads
+        window.onload = function() {
+            askForOption();
+        };
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Selection Page</h1>
+    <p>This page will redirect you based on your selection.</p>
+</body>
+</html>

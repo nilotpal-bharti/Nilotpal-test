@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script>
+	;(function(win, doc, style, timeout) {
+  var STYLE_ID = 'at-body-style';
+
+  function getParent() {
+    return doc.getElementsByTagName('head')[0];
+  }
+
+  function addStyle(parent, id, def) {
+    if (!parent) {
+      return;
+    }
+
+    var style = doc.createElement('style');
+    style.id = id;
+    style.innerHTML = def;
+    parent.appendChild(style);
+  }
+
+  function removeStyle(parent, id) {
+    if (!parent) {
+      return;
+    }
+
+    var style = doc.getElementById(id);
+
+    if (!style) {
+      return;
+    }
+
+    parent.removeChild(style);
+  }
+
+  addStyle(getParent(), STYLE_ID, style);
+  setTimeout(function() {
+    removeStyle(getParent(), STYLE_ID);
+  }, timeout);
+}(window, document, "body {opacity: 0 !important}", 3000));
+
+</script>
+<script src="https://assets.adobedtm.com/6a203c8a0ff8/86acfc450802/launch-f4ca88e1caf0.min.js" async></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Testing web-page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+         #background-gif {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        #content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        #center-box {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background: url('GIF 2.gif') center center no-repeat;
+            background-size: cover;
+        }
+
+        .circle {
+            position: absolute;
+            background-color: #fff; /* Adjust the color as needed */
+            width: 100px; /* Adjust the size as needed */
+            height: 100px; /* Adjust the size as needed */
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px; /* Adjust the font size as needed */
+            color: #000; /* Adjust the text color as needed */
+            font-weight: bold;
+            text-align: center;
+            line-height: 1;
+			cursor: pointer;
+		}
+
+        #circle1 { top: 50px; left: 50px; }
+        #circle2 { top: 50px; right: 50px; }
+        #circle3 { bottom: 50px; left: 50px; }
+        #circle4 { bottom: 50px; right: 50px; }
+    </style>
+</head>
+<body>
+    <img id="background-gif" src="ezgif.com-optimize.gif" alt="Background GIF">
+    <div id="content-container">
+        <div id="center-box">
+            
+        </div>
+         <div class="circle" id="circle1" data-analytics-id="PageView">Page View</div>
+		 <div class="circle" id="circle2" data-analytics-id="LinkCall">Link Call</div>
+		 <div class="circle" id="circle3" data-analytics-id="Purchase">Purchase</div>
+		 <div class="circle" id="circle4" data-analytics-id="Product View">Product View</div>
+
+    </div>
+</body>
+</html>
