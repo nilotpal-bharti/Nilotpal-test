@@ -4,29 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Select Your Option</title>
-    <script>
-        function askForOption() {
-            // Show the prompt for options
-            let userChoice = prompt("Choose an option:\n1. Analytics AppMeasurement\n2. AEP WebSDK", "Enter 1 or 2");
-
-            // Check the user input and redirect accordingly
-            if (userChoice == "1") {
-                window.location.href = "./aa";
-            } else if (userChoice == "2") {
-                window.location.href = "./aep";
-            } else {
-                alert("Invalid option. Please refresh the page and select either 1 or 2.");
-            }
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
         }
 
-        // Trigger the pop-up as soon as the page loads
-        window.onload = function() {
-            askForOption();
-        };
-    </script>
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .popup {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            z-index: 2;
+        }
+
+        .popup h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .popup p {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .popup button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-analytics {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .btn-analytics:hover {
+            background-color: #45a049;
+        }
+
+        .btn-aep {
+            background-color: #008cba;
+            color: white;
+        }
+
+        .btn-aep:hover {
+            background-color: #007bb5;
+        }
+
+        /* Blinking dots animation */
+        .waiting {
+            font-size: 14px;
+            color: #888;
+        }
+
+        .dot {
+            display: inline-block;
+            margin-left: 2px;
+            width: 8px;
+            height: 8px;
+            background-color: #888;
+            border-radius: 50%;
+            animation: blink 1.2s infinite both;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Selection Page</h1>
-    <p>This page will redirect you based on your selection.</p>
+
+    <div class="overlay" id="overlay">
+        <div class="popup">
+            <h2>Choose Your Option</h2>
+            <p>Please select one of the following:</p>
+            <button class="btn-analytics" onclick="redirect('https://www.nilotpalbharti.com/test/aa')">Analytics AppMeasurement</button>
+            <button class="btn-aep" onclick="redirect('https://www.nilotpalbharti.com/test/aep')">AEP WebSDK</button>
+            <div class="waiting">Waiting<span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        </div>
+    </div>
+
+    <script>
+        // Redirect function
+        function redirect(url) {
+            window.location.href = url;
+        }
+
+        // Show the pop-up when the page loads
+        window.onload = function() {
+            document.getElementById("overlay").classList.remove("hidden");
+        };
+    </script>
+
 </body>
 </html>
